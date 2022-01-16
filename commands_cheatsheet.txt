@@ -15,7 +15,7 @@
 
 # start a docker container
 # -f is the parameter to specify the file (useful if you have multiple), we don't use detach as we want to see the output in the bash
-`sudo docker-compose -f docker-compose-kafka up`
+`sudo docker-compose -f docker-compose-kafka-spark-mongodb.yml up`
 
 # kill a container
 1. check the name of the container running `sudo docker ps`
