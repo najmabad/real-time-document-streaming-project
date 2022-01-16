@@ -1,32 +1,50 @@
 # activate virtual environment
-source venv/bin/activate
+`source venv/bin/activate`
 
-# to start the API locally
+################################################################################################
+####################################### FastAPI ################################################
+################################################################################################
+
+# start the API locally
 1. Navigate to the folder where you have saved the main.py file
 2. Start the API with `uvicorn main:app --reload`
 
 ################################################################################################
-############################# DOCKER CONTAINERS ################################################
+####################################### DOCKER  ################################################
 ################################################################################################
 
-
-# to start a docker container
-sudo docker-compose -f docker-compose-kafka up #-f is the parameter to specify the file (useful if you have multiple), we don't use detach as we want to see the output in the bash
+# start a docker container
+# -f is the parameter to specify the file (useful if you have multiple), we don't use detach as we want to see the output in the bash
+`sudo docker-compose -f docker-compose-kafka up`
 
 # kill a container
-1. check the name of the container running
-`sudo docker ps`
+1. check the name of the container running `sudo docker ps`
 2. `sudo docker stop <container_name>`.
 
-
 # stop all docker containers
-sudo docker kill $(sudo docker ps -q)
+`sudo docker kill $(sudo docker ps -q)`
 
 # connect to bash of container
-1. check the name of the container running:
-sudo docker ps
-2. connect to bash
-sudo docker exec -it document_streaming_kafka_1 /bin/bash
+1. check the name of the container running `sudo docker ps`
+2. connect to bash: `sudo docker exec -it document_streaming_kafka_1 /bin/bash`
+
+# create a Docker image for the data-API 
+1. create dockerfile
+2. create requirements.txt
+3. `cd data-API`
+4. `sudo docker build -t <image_name> .`
+
+# check available images
+`sudo docker images`
+
+# remove a Docker image
+`sudo docker rmi <your_image_id>
+
+# check name of container network
+`sudo docker inspect c1 -f "{{json .NetworkSettings.Networks }}"`
+
+# start the API in a container
+`sudo docker run --rm --network document_streaming_default --name data-api -p 80:80 data-api`
 
 
 ################################################################################################
@@ -53,30 +71,6 @@ opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9091 --delete
 
 # create local consumer
 /opt/bitnami/kafka/bin/kafka-console-consumer.sh --topic ingestion-topic --bootstrap-server localhost:9092
-./kafka-console-consumer.sh --topic spark-output --bootstrap-server localhost:9092
-
-################################################################################################
-################################### DOCKER ######################################################
-################################################################################################
-
-
-# create a Docker image for the data-API 
-1. create dockerfile
-2. create requirements.txt
-3. `cd data-API`
-4. `sudo docker build -t <image_name> . 
-
-# check available images
-`sudo docker images`
-
-# remove a Docker image
-`sudo docker rmi <your_image_id>
-
-# check name of container network
-sudo docker inspect c1 -f "{{json .NetworkSettings.Networks }}"
-
-# start the API in a container
-sudo docker run --rm --network document_streaming_default --name my-api-document-streaming -p 80:80 api-document-streaming
 
 
 ################################################################################################
@@ -84,4 +78,4 @@ sudo docker run --rm --network document_streaming_default --name my-api-document
 ################################################################################################
 
 # run the app
-streamlit run <name_of_your_app.py>
+`streamlit run <name_of_your_app.py>`
