@@ -40,6 +40,13 @@ Set up Kafka Topics:
 This project uses a customer docker image to run the data API with docker. To recreate the image on your local machine navigate to the `Data API` folder and run `sudo docker build -t data-api. This creates a new image called `data-api` on your machine that Docker can build.
 To check all available images, run `sudo docker images`
 
+## Access Spark Jupyter Notebooks
+Spark is also run on a Docker container. This is automatically set-up with the `docker-compose-kafka-spark-mongo.yml` file.
+To work with the notebooks, open with your browser the `localhost:/8888`. This might ask you for a passwork/token that you can find in the logs generated when you started the containers.
+
+Once you ran the containers:
+- go to mongodb and create a database called `docstreaming` and a collection called `invoices`
+
 
 
 ### Push the Data API to Docker
