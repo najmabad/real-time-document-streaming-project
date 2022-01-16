@@ -1,0 +1,13 @@
+# select Docker image with Uvicorn for FastAPI web applications
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
+
+# copy the local file into a temporary folder
+COPY requirements.txt /tmp/
+
+# upgrade pip and install the requirements 
+# (i.e. the custom libraries that we need for our API)
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --requirement /tmp/requirements.txt
+
+# copy the content inside the `app` folder
+COPY ./app /app
