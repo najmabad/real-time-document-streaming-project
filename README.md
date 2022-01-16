@@ -27,7 +27,7 @@ It processes invoices data and creates a dashboard where it's possible to:
 This was built on a Linux machine, if you are on a Mac you can probably avoid `sudo` in front of most commands.
 
 - **Step 1.** Clone the repository to your local machine
-- **Step 2.** Activate the virtual environment with `source venv/bin/activate` and then install the requirements `pip install -r requirements.txt`
+- **Step 2.** Create a virtual env with `sudo python3 -m venv ./venv` and activate it with `source venv/bin/activate`. Once this is done, install the requirements `pip install -r requirements.txt`
 - **Step 3.** Create a folder `mongodb-data` to save data locally
 - **Step 4.** Downlaod the data from [here](https://www.kaggle.com/carrie1/ecommerce-data)
 - **Step 5.** Convert csv data into JSON: `sudo python data/csv_to_json.py`. This will transform the data and saved them as `output.txt`
