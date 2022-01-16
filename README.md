@@ -2,6 +2,11 @@
 
 ## Introduction & Goals
 
+This project is an end-to-end pipeline.
+It processes invoices data and creates a dashboard where it's possible to:
+- fetch all invoices related to a customer
+- fetch all items related to an invoice
+
 ## Contents
 - [The Data Set](#the-data-set)
 - [Set Up](#set-up)
@@ -36,10 +41,14 @@ This was built on a Linux machine, if you are on a Mac you can probably avoid `s
     1. Nvigate to the `Data API` folder: `cd data-api`
     2. Run `sudo docker build -t data-api.
     3. This creates a new image called `data-api` on your machine that Docker can build. To check all available images, run `sudo docker images`  
-- **Step 9.** Open the Jupyter Notebook PySpark. This should be on `localhost:8888`. This might ask you for a passwork/token that you can find in the logs generated when you started the containers.
+- **Step 9.** Open the Jupyter Notebook PySpark. This should be on `localhost:8888`. This might ask you for a passwork/token that you can find in the logs generated when you started the containers. Leave this open (it will process messages as they are ingested by Kafka).
 - **Step 10.** Open the UI of Mongo DB. This should be on `localhost:8081` and:
     1. Create a database called `documentstreaming` 
     2. Create a collection called `invoices
+- **Step 11.** Run `python data/data-api-client.py` to send the data to MongoDB. If everything is running correctly, you should see documents population the MongoDB interface.
+- **Step 12.** Run `streamilit run invoices_interfaces.py`. This will open a window in your browser (localhost:8501) from which you can query invoices by customer ID and invoices items by Invoice ID.
+
+I hope you enjoyed it!
 
 
 
