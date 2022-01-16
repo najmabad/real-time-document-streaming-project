@@ -1,3 +1,4 @@
+# color is ffde59
 import streamlit as st
 from pandas import DataFrame
 
@@ -15,7 +16,7 @@ st.title('What did your customer buy?')
 
 
 # add a input field for the customer id
-cust_id = st.sidebar.text_input("CustomerID:")
+cust_id = st.sidebar.text_input("CustomerID:") # example: 17850
  
 if cust_id:
     query = {"CustomerID": cust_id}

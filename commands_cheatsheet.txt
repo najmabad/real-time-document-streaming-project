@@ -64,10 +64,10 @@
 opt/bitnami/kafka/bin/kafka-topics.sh --create --topic <topic_name> --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 
 # describe a topic (e.g find leader broker)
-opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9091 --describe --topic <topic_name>
+opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic <topic_name>
 
 # delete topic
-opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9091 --delete --topic <topic_name>
+opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic <topic_name>
 
 # create local consumer
 /opt/bitnami/kafka/bin/kafka-console-consumer.sh --topic ingestion-topic --bootstrap-server localhost:9092

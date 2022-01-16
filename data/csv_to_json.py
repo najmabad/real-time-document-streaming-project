@@ -2,7 +2,8 @@ import numpy as np
 import pandas as pd
 
 # import dataset
-df = pd.read_csv ('./data.csv', encoding='utf-8')
+with open('./data.csv', encoding='utf8', errors='ignore') as f:
+    df = pd.read_csv(f, sep=',')
 
 # add json column to the dataframe
 # since we use 'records' each row will be converted with a structure {'col1': 'value', 'col2': 'value'}
