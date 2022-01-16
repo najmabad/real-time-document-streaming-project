@@ -35,3 +35,15 @@ Set up Kafka Topics:
 3. Connect to the bash: `sudo docker exect -it <container_name> /bin/bash`
 4. List all topics: `/opt/bitnami/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092`
 
+
+### Push the Data API to Docker
+Once you have created your data API locally, you might want to push it to Docker. This can be done as follows:
+1. Create a `dockerfile` to be able to build your container. See example in the `data API` folder.
+2. Create a `requirements.txt` which contains the necessary libraries. See example in the `data API` folder.
+3. Before deploying, change the `bootstrap_server` parameter of the KafkaProducer to the address available to internal clients (in our case this is `kafka:9092).
+4. Navigate to the `Data API` folder and run `sudo docker build -t <image_name>`. This creates a new image on your machine that Docker can build.
+5. To check all available images, run `sudo docker images`
+
+
+Is important that your API, Kafka, Spark, and MongoDB container all run under the same docker container network.
+
