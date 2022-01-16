@@ -1,0 +1,87 @@
+# activate virtual environment
+source venv/bin/activate
+
+# to start the API locally
+1. Navigate to the folder where you have saved the main.py file
+2. Start the API with `uvicorn main:app --reload`
+
+################################################################################################
+############################# DOCKER CONTAINERS ################################################
+################################################################################################
+
+
+# to start a docker container
+sudo docker-compose -f docker-compose-kafka up #-f is the parameter to specify the file (useful if you have multiple), we don't use detach as we want to see the output in the bash
+
+# kill a container
+1. check the name of the container running
+`sudo docker ps`
+2. `sudo docker stop <container_name>`.
+
+
+# stop all docker containers
+sudo docker kill $(sudo docker ps -q)
+
+# connect to bash of container
+1. check the name of the container running:
+sudo docker ps
+2. connect to bash
+sudo docker exec -it document_streaming_kafka_1 /bin/bash
+
+
+################################################################################################
+################################### KAFKA ######################################################
+################################################################################################
+
+# Note: bootstrap-server is a comma-separated list of host and port pairs (e.g. localhost:9092,another.host:9092)
+# that are the addresses of the Kafka brokers in a "bootstrap" Kafka cluster.
+# The bootstrap-server is used for the initial connection. The client connects to 
+# this server to discover then the full cluster. It's called "bootstrap" as the 
+# client discover the cluster by it's own means (?). 
+
+# list all available topics
+/opt/bitnami/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+# create topic
+opt/bitnami/kafka/bin/kafka-topics.sh --create --topic <topic_name> --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+# describe a topic (e.g find leader broker)
+opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9091 --describe --topic <topic_name>
+
+# delete topic
+opt/bitnami/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9091 --delete --topic <topic_name>
+
+# create local consumer
+/opt/bitnami/kafka/bin/kafka-console-consumer.sh --topic ingestion-topic --bootstrap-server localhost:9092
+./kafka-console-consumer.sh --topic spark-output --bootstrap-server localhost:9092
+
+################################################################################################
+################################### DOCKER ######################################################
+################################################################################################
+
+
+# create a Docker image for the data-API 
+1. create dockerfile
+2. create requirements.txt
+3. `cd data-API`
+4. `sudo docker build -t <image_name> . 
+
+# check available images
+`sudo docker images`
+
+# remove a Docker image
+`sudo docker rmi <your_image_id>
+
+# check name of container network
+sudo docker inspect c1 -f "{{json .NetworkSettings.Networks }}"
+
+# start the API in a container
+sudo docker run --rm --network document_streaming_default --name my-api-document-streaming -p 80:80 api-document-streaming
+
+
+################################################################################################
+################################### STREAMLIT ######################################################
+################################################################################################
+
+# run the app
+streamlit run <name_of_your_app.py>
