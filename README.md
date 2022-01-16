@@ -36,6 +36,12 @@ Set up Kafka Topics:
 4. List all topics: `/opt/bitnami/kafka/bin/kafka-topics.sh --list --bootstrap-server localhost:9092`
 
 
+## data-API image
+This project uses a customer docker image to run the data API with docker. To recreate the image on your local machine navigate to the `Data API` folder and run `sudo docker build -t data-api. This creates a new image called `data-api` on your machine that Docker can build.
+To check all available images, run `sudo docker images`
+
+
+
 ### Push the Data API to Docker
 Once you have created your data API locally, you might want to push it to Docker. This can be done as follows:
 1. Create a `dockerfile` to be able to build your container. See example in the `data API` folder.
