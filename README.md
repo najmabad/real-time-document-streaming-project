@@ -19,6 +19,8 @@
 - Some invoices don't have a CustomerID and Quantity can be a negative number.
 
 # Used Tools
+- FastAPI and uvicorn: the Python API is built using the FastAPI framework and uvicorn as the server to serve requests.
+- Kafka
 
 ## Set up
 
