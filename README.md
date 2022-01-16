@@ -4,7 +4,6 @@
 
 ## Contents
 - [The Data Set](#the-data-set)
-- [Used Tools](#used-tools)
 - [Set Up](#set-up)
 
 
