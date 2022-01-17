@@ -1,4 +1,4 @@
-# Document Streaming Project for E-commerce dataset
+# Document Streaming Project for e-commerce dataset
 
 ## Introduction & Goals
 
