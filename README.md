@@ -50,6 +50,63 @@ This was built on a Linux machine, if you are on a Mac you can probably avoid `s
 
 I hope you enjoyed it!
 
+## Presentation
+
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/1.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/2.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/3.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/4.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/5.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/6.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/7.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/8.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/9.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/10.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/11.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/12.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/13.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/14.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/15.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/16.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/17.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/18.png)
+
+---
+![alt text](https://github.com/najmabad/document-streaming-project/blob/master/presentation/19.png)
 
 
 
