@@ -33,7 +33,7 @@ This was built on a Linux machine, if you are on a Mac you can probably avoid `s
 - **Step 5.** Convert csv data into JSON: `sudo python data/csv_to_json.py`. This will transform the data and saved them as `output.txt`
 - **Step 6.** Create the `data-api` image:
     1. Navigate to the `Data API` folder: `cd data-api`
-    2. Run `sudo docker build -t data-api.
+    2. Run `sudo docker build -t data-api`.
     3. This creates a new image called `data-api` on your machine that Docker can build. To check all available images, run `sudo docker images`  
 - **Step 7.** Start docker containers: `sudo docker-compose -f docker-compose-kafka-spark-mongodb.yml up`. Verify that all containers are runnign with `sudo docker ps`.
 - **Step 8.** Set up the kafka topic:
