@@ -13,7 +13,7 @@ It processes invoices data and creates a dashboard where it's possible to:
 
 
 ## The Data Set
-- This project uses an e-commerce dataset that you can downlaod [here](https://www.kaggle.com/carrie1/ecommerce-data).
+- This project uses an e-commerce dataset that you can download [here](https://www.kaggle.com/carrie1/ecommerce-data).
 - It consists of invoices from a UK retailer between December 2010 and December 2011 (~540k rows and ~26k unique invoices).
 - Fields in the datasets are: InvoiceNo, StockCode, Description, Quantity, InvoiceDate, UnitPrice, CustomerID, and Country.
 - InvoiceNo is the invoice ID.
